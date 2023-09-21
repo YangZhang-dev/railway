@@ -1,10 +1,9 @@
 package com.zzys.railway.framework.starter.base.config;
 
 import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
 
 /**
  * base配置元数据项
@@ -15,5 +14,15 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 @ConfigurationProperties(prefix = ApplicationBaseAutoConfigurationProperties.PREFIX)
 public class ApplicationBaseAutoConfigurationProperties {
-    public static final String PREFIX = "framework.base.fastjson.safa-mode";
+    public static final String PREFIX = "framework.base";
+    @Autowired
+    private Fastjson fastjson;
+
+    @Data
+    @Component
+    @ConfigurationProperties("framework.base.fastjson.safa-mode")
+    public static class Fastjson {
+        private Boolean safeMode;
+    }
+
 }
