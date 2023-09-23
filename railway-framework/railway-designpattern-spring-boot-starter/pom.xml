@@ -3,20 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>railway</artifactId>
+        <artifactId>railway-framework</artifactId>
         <groupId>com.zzys</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>railway-framework</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>railway-base-spring-boot-starter</module>
-        <module>railway-convention-spring-boot-starter</module>
-        <module>railway-bizs-spring-boot-starter</module>
-        <module>railway-designpattern-spring-boot-starter</module>
-    </modules>
+    <artifactId>railway-designpattern-spring-boot-starter</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -26,8 +19,17 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.zzys</groupId>
+            <artifactId>railway-base-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zzys</groupId>
+            <artifactId>railway-convention-spring-boot-starter</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 </project>
