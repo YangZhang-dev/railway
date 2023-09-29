@@ -1,6 +1,8 @@
 package com.zzys.railway.framework.starter.user.utils;
 
 import com.alibaba.fastjson2.JSON;
+import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
+import com.zzys.railway.framework.starter.user.config.UserAutoConfigurationProperties;
 import com.zzys.railway.framework.starter.user.core.UserInfoDTO;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
@@ -23,10 +25,12 @@ import static com.zzys.railway.framework.starter.base.constant.UserConstant.*;
  */
 @Slf4j
 public class JWTUtil {
-    private static final long EXPIRATION = 86400L;
-    public static final String TOKEN_PREFIX = "Bearer ";
-    public static final String ISS = "railway";
-        public static final String SECRET = "SecretKey039245678901232039487623456783092349288901402967890140939827";
+    // TODO 测试有效性
+    static UserAutoConfigurationProperties properties = ApplicationContextHolder.getBean(UserAutoConfigurationProperties.class);
+    private static final long EXPIRATION = properties.getEXPIRATION();
+    public static final String TOKEN_PREFIX = properties.getTOKEN_PREFIX();
+    public static final String ISS = properties.getISS();
+    public static final String SECRET = properties.getSECRET();
 
     /**
      * 生成用户 Token

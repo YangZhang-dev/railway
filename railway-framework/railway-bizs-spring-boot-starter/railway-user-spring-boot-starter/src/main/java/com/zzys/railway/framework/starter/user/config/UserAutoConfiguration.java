@@ -1,11 +1,13 @@
 package com.zzys.railway.framework.starter.user.config;
 
+import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
 import com.zzys.railway.framework.starter.user.core.UserTransmitFilter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 import static com.zzys.railway.framework.starter.base.constant.FilterOrderConstant.USER_TRANSMIT_FILTER_ORDER;
 
@@ -18,6 +20,7 @@ import static com.zzys.railway.framework.starter.base.constant.FilterOrderConsta
 @Configuration
 @EnableConfigurationProperties(UserAutoConfigurationProperties.class)
 @ConditionalOnWebApplication
+@Import(ApplicationContextHolder.class)
 public class UserAutoConfiguration {
     /**
      * 用户信息传递过滤器

@@ -43,15 +43,13 @@ public class RejectedProxyUtil {
         ThreadFactory factory = ThreadFactoryBuilder.builder()
                 .prefix("zzys-")
                 .build();
-        TaskQueue<Runnable> q = new TaskQueue<>(1);
         EagerThreadPoolExecutor threadPoolExecutor = EagerThreadPoolBuilder.builder()
                 .corePoolSize(1)
                 .maximumPoolSize(3)
                 .keepAliveTime(1024,TimeUnit.SECONDS)
-                .workQueue(q)
+                .workQueue(new TaskQueue<>(1))
                 .threadFactory(factory)
                 .build();
-        q.setExecutor(threadPoolExecutor);
         // ----------------------- 测试普通线程池拒绝策略动态代理程序 -----------------------
 //        ThreadPoolExecutor threadPoolExecutor =
 //                new ThreadPoolExecutor(1, 3, 1024, TimeUnit.SECONDS, new LinkedBlockingQueue<>(1));

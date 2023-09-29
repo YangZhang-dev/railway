@@ -17,6 +17,10 @@
         <module>railway-bizs-spring-boot-starter</module>
         <module>railway-designpattern-spring-boot-starter</module>
         <module>railway-common-spring-boot-starter</module>
+        <module>railway-database-spring-boot-stater</module>
+        <module>railway-distributedid-spring-boot-starter</module>
+        <module>railway-log-spring-boot-starter</module>
+        <module>railway-web-spring-boot-starter</module>
     </modules>
 
     <properties>
