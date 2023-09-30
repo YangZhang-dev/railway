@@ -21,6 +21,7 @@
         <module>railway-distributedid-spring-boot-starter</module>
         <module>railway-log-spring-boot-starter</module>
         <module>railway-web-spring-boot-starter</module>
+        <module>railway-cache-spring-boot-starter</module>
     </modules>
 
     <properties>
