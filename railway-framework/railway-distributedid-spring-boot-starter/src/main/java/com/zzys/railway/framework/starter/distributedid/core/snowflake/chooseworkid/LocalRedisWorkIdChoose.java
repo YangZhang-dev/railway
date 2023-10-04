@@ -1,8 +1,8 @@
 package com.zzys.railway.framework.starter.distributedid.core.snowflake.chooseworkid;
 
 import cn.hutool.core.collection.CollUtil;
-import com.zzys.railway.framework.starter.distributedid.core.snowflake.WorkIdWrapper;
 import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
+import com.zzys.railway.framework.starter.distributedid.core.snowflake.WorkIdWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.ClassPathResource;

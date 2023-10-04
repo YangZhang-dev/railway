@@ -5,7 +5,6 @@ import com.github.dozermapper.core.Mapper;
 import com.github.dozermapper.core.loader.api.BeanMappingBuilder;
 import lombok.NoArgsConstructor;
 
-
 import java.lang.reflect.Array;
 import java.util.*;
 

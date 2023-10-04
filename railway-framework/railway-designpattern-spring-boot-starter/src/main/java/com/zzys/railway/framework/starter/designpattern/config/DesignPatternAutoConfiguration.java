@@ -1,8 +1,8 @@
 package com.zzys.railway.framework.starter.designpattern.config;
 
+import com.zzys.railway.framework.starter.base.config.ApplicationBaseAutoConfiguration;
 import com.zzys.railway.framework.starter.designpattern.chain.AbstractChainContext;
 import com.zzys.railway.framework.starter.designpattern.strategy.AbstractStrategyChoose;
-import com.zzys.railway.framework.starter.base.config.ApplicationBaseAutoConfiguration;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 

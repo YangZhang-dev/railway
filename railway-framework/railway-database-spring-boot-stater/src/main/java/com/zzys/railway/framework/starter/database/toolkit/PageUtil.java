@@ -2,9 +2,9 @@ package com.zzys.railway.framework.starter.database.toolkit;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.zzys.railway.framework.starter.common.utils.BeanCopyUtil;
 import com.zzys.railway.framework.starter.convention.page.PageRequest;
 import com.zzys.railway.framework.starter.convention.page.PageResponse;
-import com.zzys.railway.framework.starter.common.utils.BeanCopyUtil;
 
 import java.util.List;
 import java.util.function.Function;

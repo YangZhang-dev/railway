@@ -1,8 +1,8 @@
 package com.zzys.railway.framework.starter.idempotent.core.aspect;
 
 import com.zzys.railway.framework.starter.idempotent.annotation.Idempotent;
-import com.zzys.railway.framework.starter.idempotent.core.handler.IdempotentExecuteHandler;
 import com.zzys.railway.framework.starter.idempotent.core.factory.IdempotentExecuteHandlerFactory;
+import com.zzys.railway.framework.starter.idempotent.core.handler.IdempotentExecuteHandler;
 import com.zzys.railway.framework.starter.idempotent.exception.RepeatConsumptionException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -23,7 +23,7 @@ public final class IdempotentAspect {
     /**
      * 增强方法标记 {@link Idempotent} 注解逻辑
      */
-    @Around("@annotation(org.opengoofy.index12306.framework.starter.idempotent.annotation.Idempotent)")
+    @Around("@annotation(com.zzys.railway.framework.starter.idempotent.annotation.Idempotent)")
     public Object idempotentHandler(ProceedingJoinPoint joinPoint) throws Throwable {
         Idempotent idempotent = getIdempotent(joinPoint);
         IdempotentExecuteHandler instance = IdempotentExecuteHandlerFactory.getInstance(idempotent.scene(), idempotent.type());

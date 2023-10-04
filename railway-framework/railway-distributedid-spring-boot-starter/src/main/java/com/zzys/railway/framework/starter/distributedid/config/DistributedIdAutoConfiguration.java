@@ -1,8 +1,8 @@
 package com.zzys.railway.framework.starter.distributedid.config;
 
+import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
 import com.zzys.railway.framework.starter.distributedid.core.snowflake.chooseworkid.LocalRedisWorkIdChoose;
 import com.zzys.railway.framework.starter.distributedid.core.snowflake.chooseworkid.RandomWorkIdChoose;
-import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

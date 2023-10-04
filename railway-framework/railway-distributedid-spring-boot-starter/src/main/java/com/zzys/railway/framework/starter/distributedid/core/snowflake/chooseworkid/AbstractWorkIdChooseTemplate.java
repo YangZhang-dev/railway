@@ -1,13 +1,11 @@
 package com.zzys.railway.framework.starter.distributedid.core.snowflake.chooseworkid;
 
-import cn.hutool.core.date.SystemClock;
 import com.zzys.railway.framework.starter.base.ApplicationContextHolder;
 import com.zzys.railway.framework.starter.distributedid.config.DistributedIdAutoConfigurationProperties;
 import com.zzys.railway.framework.starter.distributedid.core.snowflake.Snowflake;
 import com.zzys.railway.framework.starter.distributedid.core.snowflake.WorkIdWrapper;
 import com.zzys.railway.framework.starter.distributedid.toolkit.SnowflakeIdUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
 
 /**
  * @author YangZhang

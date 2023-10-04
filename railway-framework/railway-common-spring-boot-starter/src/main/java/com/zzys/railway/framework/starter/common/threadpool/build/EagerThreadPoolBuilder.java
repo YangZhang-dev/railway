@@ -2,14 +2,14 @@ package com.zzys.railway.framework.starter.common.threadpool.build;
 
 import com.zzys.railway.framework.starter.common.threadpool.support.eager.EagerThreadPoolExecutor;
 import com.zzys.railway.framework.starter.common.threadpool.support.eager.TaskQueue;
+import com.zzys.railway.framework.starter.common.utils.Assert;
+import com.zzys.railway.framework.starter.designpattern.builder.Builder;
 
 import java.math.BigDecimal;
 import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import com.zzys.railway.framework.starter.designpattern.builder.Builder;
-import com.zzys.railway.framework.starter.common.utils.Assert;
 
 /**
  * 快速消费线程池构建者

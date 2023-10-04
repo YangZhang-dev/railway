@@ -7,7 +7,6 @@ import com.zzys.railway.framework.starter.cache.config.RedisDistributedPropertie
 import com.zzys.railway.framework.starter.cache.core.component.CacheGetFilter;
 import com.zzys.railway.framework.starter.cache.core.component.CacheGetIfAbsent;
 import com.zzys.railway.framework.starter.cache.core.component.CacheLoader;
-import com.zzys.railway.framework.starter.cache.core.params.GetDistributedCacheParams;
 import com.zzys.railway.framework.starter.cache.toolkit.CacheUtil;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

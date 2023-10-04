@@ -1,6 +1,7 @@
 package com.zzys.railway.framework.starter.idempotent.core.aspect;
 
 import cn.hutool.core.collection.CollUtil;
+import com.alibaba.ttl.TransmittableThreadLocal;
 import com.google.common.collect.Maps;
 
 import java.util.Map;
@@ -13,7 +14,7 @@ import java.util.Map;
  */
 public final class IdempotentContext {
 
-    private static final ThreadLocal<Map<String, Object>> CONTEXT = new ThreadLocal<>();
+    private static final ThreadLocal<Map<String, Object>> CONTEXT = new TransmittableThreadLocal<>();
 
     public static Map<String, Object> get() {
         return CONTEXT.get();
