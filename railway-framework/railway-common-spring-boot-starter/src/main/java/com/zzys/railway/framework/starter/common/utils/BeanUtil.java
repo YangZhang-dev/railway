@@ -18,7 +18,7 @@ import static com.github.dozermapper.core.loader.api.TypeMappingOptions.mapNull;
  * @createTime 2023/09/23/ 11:40
  */
 @NoArgsConstructor(access = lombok.AccessLevel.PRIVATE)
-public class BeanCopyUtil {
+public class BeanUtil {
 
     protected static Mapper BEAN_MAPPER_BUILDER;
 

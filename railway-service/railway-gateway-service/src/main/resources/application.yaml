@@ -3,6 +3,7 @@ server:
 spring:
   application:
     name: railway-gateway-service
+  profiles:
     active: dev
   cloud:
     nacos:

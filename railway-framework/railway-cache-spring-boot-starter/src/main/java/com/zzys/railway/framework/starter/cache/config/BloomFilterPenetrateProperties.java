@@ -13,8 +13,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = BloomFilterPenetrateProperties.PREFIX)
 public class BloomFilterPenetrateProperties {
 
-    public static final String PREFIX = "framework.cache.redis.bloom-filter.default";
+    public static final String PREFIX = "framework.cache.redis.bloom-filter";
 
+    /**
+     * 是否开启布隆过滤器
+     */
+    private Boolean enabled = false;
     /**
      * 布隆过滤器默认实例名称
      */

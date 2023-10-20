@@ -75,7 +75,7 @@ public class TokenValidateGatewayFilterFactory extends AbstractGatewayFilterFact
         return userInfo != null;
     }
     @Data
-    public class Config {
+    public static class Config {
 
         /**
          * 黑名单前置路径

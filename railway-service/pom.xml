@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>railway-gateway-service</module>
+        <module>railway-user-service</module>
     </modules>
 
     <properties>

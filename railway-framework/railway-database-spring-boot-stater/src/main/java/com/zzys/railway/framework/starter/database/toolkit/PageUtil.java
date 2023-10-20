@@ -2,7 +2,7 @@ package com.zzys.railway.framework.starter.database.toolkit;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.zzys.railway.framework.starter.common.utils.BeanCopyUtil;
+import com.zzys.railway.framework.starter.common.utils.BeanUtil;
 import com.zzys.railway.framework.starter.convention.page.PageRequest;
 import com.zzys.railway.framework.starter.convention.page.PageResponse;
 
@@ -43,7 +43,7 @@ public class PageUtil {
      * {@link IPage} to {@link PageResponse}
      */
     public static <TARGET, ORIGINAL> PageResponse<TARGET> convert(IPage<ORIGINAL> iPage, Class<TARGET> targetClass) {
-        iPage.convert(each -> BeanCopyUtil.convert(each, targetClass));
+        iPage.convert(each -> BeanUtil.convert(each, targetClass));
         return buildConventionPage(iPage);
     }
 

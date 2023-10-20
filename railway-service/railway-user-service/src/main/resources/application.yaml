@@ -1,0 +1,85 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: railway-user-service
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
+  data:
+    redis:
+      host: localhost
+      port: 10004
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      password: nacos
+      username: nacos
+#    sentinel:
+#      transport:
+#        dashboard: localhost:8686
+#        port: 8719
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+framework:
+  cache:
+    redis:
+      bloom-filter:
+        enabled: true
+        name: user_register_cache_penetration_bloom_filter
+        expected-insertions: 64000
+        false-probability: 0.003
+  base:
+    fastjson:
+      safe-mode: true
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: '*'
+#  metrics:
+#    tags:
+#      application: ${spring.application.name}
+
+#  docker run -d -p 10009:9876 --name rmqnamesrv foxiswho/rocketmq:server-4.5.1
+
+#  docker run -d \
+#  -p 10013:10013 \
+#  -p 10014:10014 \
+#  --name rmqbroker \
+#  --link rmqnamesrv:namesrv \
+#  -v /root/rocketmq/config/broker.conf:/etc/rocketmq/broker.conf \
+#  -e "NAMESRV_ADDR=namesrv:9876" \
+#  -e "JAVA_OPTS=-Duser.home=/opt" \
+#  -e "JAVA_OPT_EXT=-server -Xms512m -Xmx512m" \
+#  foxiswho/rocketmq:broker-4.5.1
+
+#  docker pull pangliang/rocketmq-console-ng
+
+#  docker run -d \
+#  --link rmqnamesrv:namesrv \
+#  -e "JAVA_OPTS=-Drocketmq.config.namesrvAddr=namesrv:9876 -Drocketmq.config.isVIPChannel=false" \
+#  --name rmqconsole \
+#  -p 10010:8080 \
+#  -t pangliang/rocketmq-console-ng
+
+
+#  docker run \
+#  -d -p 8848:8848 \
+#  -p 9848:9848 \
+#  --name nacos \
+#  -e MODE=standalone \
+#  -e TIME_ZONE='Asia/Shanghai' \
+#  nacos/nacos-server:v2.1.2
+
+
+#  docker run -d -p 8848:8848 -p 9848:9848 --name nacos -e MODE=standalone -e TIME_ZONE='Asia/Shanghai' nacos/nacos-server:v2.1.2
