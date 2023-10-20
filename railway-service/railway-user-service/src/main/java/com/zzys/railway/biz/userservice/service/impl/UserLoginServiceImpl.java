@@ -2,6 +2,7 @@ package com.zzys.railway.biz.userservice.service.impl;
 
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.crypto.digest.BCrypt;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -92,10 +93,9 @@ public class UserLoginServiceImpl implements UserLoginService {
         // 查询用户信息
         LambdaQueryWrapper<UserDO> queryWrapper = Wrappers.lambdaQuery(UserDO.class)
                 .eq(UserDO::getUsername, username)
-                .eq(UserDO::getPassword, requestParam.getPassword())
-                .select(UserDO::getId, UserDO::getUsername, UserDO::getRealName);
+                .select(UserDO::getId, UserDO::getUsername, UserDO::getRealName,UserDO::getPassword);
         UserDO userDO = userMapper.selectOne(queryWrapper);
-        if (userDO != null) {
+        if (userDO != null && BCrypt.checkpw(requestParam.getPassword(),userDO.getPassword())) {
             UserInfoDTO userInfo = UserInfoDTO.builder()
                     .userId(String.valueOf(userDO.getId()))
                     .username(userDO.getUsername())
@@ -147,8 +147,10 @@ public class UserLoginServiceImpl implements UserLoginService {
         try {
             // 新增user表
             try {
-                // TODO 密码加密
-                int inserted = userMapper.insert(BeanUtil.convert(requestParam, UserDO.class));
+                UserDO userDO = BeanUtil.convert(requestParam, UserDO.class);
+                // 密码加密
+                userDO.setPassword(BCrypt.hashpw(requestParam.getPassword()));
+                int inserted = userMapper.insert(userDO);
                 if (inserted < 1) {
                     throw new ServiceException(USER_REGISTER_FAIL);
                 }
