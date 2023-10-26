@@ -1,4 +1,5 @@
-package com.zzys.railway.biz.userservice.serialize;
+
+package com.zzys.railway.framework.starter.web.serialize;
 
 import cn.hutool.core.util.DesensitizedUtil;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -8,10 +9,8 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 
 /**
- * 身份证号脱敏处理
+ * 身份证号脱敏反序列化
  *
- * @author YangZhang
- * @createTime 2023/10/09/ 18:48
  */
 public class IdCardDesensitizationSerializer extends JsonSerializer<String> {
 

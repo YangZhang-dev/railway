@@ -1,4 +1,5 @@
-package com.zzys.railway.biz.userservice.serialize;
+
+package com.zzys.railway.framework.starter.web.serialize;
 
 import cn.hutool.core.util.DesensitizedUtil;
 import com.fasterxml.jackson.core.JsonGenerator;
@@ -8,10 +9,8 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import java.io.IOException;
 
 /**
- * 手机号脱敏处理
+ * 手机号脱敏反序列化
  *
- * @author YangZhang
- * @createTime 2023/10/09/ 18:55
  */
 public class PhoneDesensitizationSerializer extends JsonSerializer<String> {
 

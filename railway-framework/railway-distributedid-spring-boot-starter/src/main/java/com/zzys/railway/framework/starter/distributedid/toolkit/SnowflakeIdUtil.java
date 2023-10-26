@@ -60,26 +60,14 @@ public class SnowflakeIdUtil {
     }
 
     // --------------------------------------------------------------
-    /**
-     * 根据 {@param serviceId} 生成雪花算法 ID
-     */
-    public static long nextIdByService(String serviceId) {
-        return IdGeneratorManager.getDefaultServiceIdGenerator().nextId(Long.parseLong(serviceId));
-    }
 
     /**
      * 根据 {@param serviceId} 生成字符串类型雪花算法 ID
      */
     public static String nextIdStrByService(String serviceId) {
-        return IdGeneratorManager.getDefaultServiceIdGenerator().nextIdStr(Long.parseLong(serviceId));
+        return IdGeneratorManager.getDefaultServiceIdGenerator().nextIdStr(serviceId);
     }
 
-    /**
-     * 根据 {@param serviceId} 生成字符串类型雪花算法 ID
-     */
-    public static String nextIdStrByService(String resource, long serviceId) {
-        return IdGeneratorManager.getIdGenerator(resource).nextIdStr(serviceId);
-    }
 
     /**
      * 根据 {@param serviceId} 生成字符串类型雪花算法 ID
@@ -88,17 +76,17 @@ public class SnowflakeIdUtil {
         return IdGeneratorManager.getIdGenerator(resource).nextIdStr(serviceId);
     }
 
-    /**
-     * 解析雪花算法生成的 ID 为对象
-     */
-    public static SnowflakeIdInfo parseSnowflakeServiceId(String snowflakeId) {
-        return IdGeneratorManager.getDefaultServiceIdGenerator().parseSnowflakeId(Long.parseLong(snowflakeId));
-    }
-
-    /**
-     * 解析雪花算法生成的 ID 为对象
-     */
-    public static SnowflakeIdInfo parseSnowflakeServiceId(String resource, String snowflakeId) {
-        return IdGeneratorManager.getIdGenerator(resource).parseSnowflakeId(Long.parseLong(snowflakeId));
-    }
+//    /**
+//     * 解析雪花算法生成的 ID 为对象
+//     */
+//    public static SnowflakeIdInfo parseSnowflakeServiceId(String snowflakeId) {
+//        return IdGeneratorManager.getDefaultServiceIdGenerator().parseSnowflakeId(Long.parseLong(snowflakeId));
+//    }
+//
+//    /**
+//     * 解析雪花算法生成的 ID 为对象
+//     */
+//    public static SnowflakeIdInfo parseSnowflakeServiceId(String resource, String snowflakeId) {
+//        return IdGeneratorManager.getIdGenerator(resource).parseSnowflakeId(Long.parseLong(snowflakeId));
+//    }
 }

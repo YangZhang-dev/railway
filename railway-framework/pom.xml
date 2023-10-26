@@ -23,6 +23,7 @@
         <module>railway-web-spring-boot-starter</module>
         <module>railway-cache-spring-boot-starter</module>
         <module>railway-idempotent-spring-boot-starter</module>
+        <module>railway-bizs-spring-boot-starter/railway-mq-spring-boot-starter</module>
     </modules>
 
     <properties>

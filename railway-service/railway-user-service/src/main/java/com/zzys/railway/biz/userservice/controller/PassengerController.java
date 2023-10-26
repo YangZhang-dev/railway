@@ -47,7 +47,7 @@ public class PassengerController {
      */
     @Idempotent(
             uniqueKeyPrefix = "railway-user:lock_passenger-alter:",
-            key = "T(com.zzys.railway.frameworks.starter.user.core.UserContext).getUsername()",
+            key = "T(com.zzys.railway.framework.starter.user.core.UserContext).getUsername()",
             type = IdempotentTypeEnum.SPEL,
             scene = IdempotentSceneEnum.RESTAPI,
             message = "正在新增乘车人，请稍后再试..."
@@ -63,7 +63,7 @@ public class PassengerController {
      */
     @Idempotent(
             uniqueKeyPrefix = "railway-user:lock_passenger-alter:",
-            key = "T(com.zzys.railway.frameworks.starter.user.core.UserContext).getUsername()",
+            key = "T(com.zzys.railway.framework.starter.user.core.UserContext).getUsername()",
             type = IdempotentTypeEnum.SPEL,
             scene = IdempotentSceneEnum.RESTAPI,
             message = "正在修改乘车人，请稍后再试..."
@@ -79,7 +79,7 @@ public class PassengerController {
      */
     @Idempotent(
             uniqueKeyPrefix = "railway-user:lock_passenger-alter:",
-            key = "T(com.zzys.railway.frameworks.starter.user.core.UserContext).getUsername()",
+            key = "T(com.zzys.railway.framework.starter.user.core.UserContext).getUsername()",
             type = IdempotentTypeEnum.SPEL,
             scene = IdempotentSceneEnum.RESTAPI,
             message = "正在移除乘车人，请稍后再试..."

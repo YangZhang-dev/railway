@@ -40,7 +40,7 @@ public class TokenValidateGatewayFilterFactory extends AbstractGatewayFilterFact
         return (exchange, chain) -> {
             ServerHttpRequest request = exchange.getRequest();
             String requestPath = request.getPath().toString();
-            if (isPathInBlackPreList(requestPath, config.getBlackPathPre())) {
+            if (!isPathInAnonymousPreList(requestPath, config.getAnonymousPathPre())) {
                 String token = request.getHeaders().getFirst("Authorization");
                 // TODO 需要验证 Token 是否有效，有可能用户注销了账户，但是 Token 有效期还未过
                 UserInfoDTO userInfo = JWTUtil.parseJwtToken(token);
@@ -64,7 +64,7 @@ public class TokenValidateGatewayFilterFactory extends AbstractGatewayFilterFact
         };
     }
 
-    private boolean isPathInBlackPreList(String requestPath, List<String> blackPathPre) {
+    private boolean isPathInAnonymousPreList(String requestPath, List<String> blackPathPre) {
         if (CollectionUtils.isEmpty(blackPathPre)) {
             return false;
         }
@@ -78,9 +78,9 @@ public class TokenValidateGatewayFilterFactory extends AbstractGatewayFilterFact
     public static class Config {
 
         /**
-         * 黑名单前置路径
+         * 匿名接口前置路径
          */
-        private List<String> blackPathPre;
+        private List<String> anonymousPathPre;
     }
 
 }

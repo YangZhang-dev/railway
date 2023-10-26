@@ -2,8 +2,8 @@ package com.zzys.railway.biz.userservice.dto.resp;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.zzys.railway.biz.userservice.serialize.IdCardDesensitizationSerializer;
-import com.zzys.railway.biz.userservice.serialize.PhoneDesensitizationSerializer;
+import com.zzys.railway.framework.starter.web.serialize.IdCardDesensitizationSerializer;
+import com.zzys.railway.framework.starter.web.serialize.PhoneDesensitizationSerializer;
 import lombok.Data;
 import lombok.experimental.Accessors;
 

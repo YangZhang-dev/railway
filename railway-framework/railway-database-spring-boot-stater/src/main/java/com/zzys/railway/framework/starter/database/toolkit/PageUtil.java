@@ -21,17 +21,17 @@ public class PageUtil {
     /**
      * {@link PageRequest} to {@link Page}
      */
-    public static Page convert(PageRequest pageRequest) {
+    public static <T> Page<T> convert(PageRequest pageRequest) {
         return convert(pageRequest.getCurrent(), pageRequest.getSize());
     }
 
     /**
      * {@link PageRequest} to {@link Page}
      */
-    public static Page convert(long current, long size) {
-        return new Page(current, size);
+    public static <T> Page<T> convert(long current, long size) {
+        return new Page<>(current, size);
     }
-
+// ----------------------------------------------------
     /**
      * {@link IPage} to {@link PageResponse}
      */

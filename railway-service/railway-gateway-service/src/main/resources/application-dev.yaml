@@ -9,7 +9,7 @@ spring:
           filters:
             - name: TokenValidate
               args:
-                blackPathPre:
+                anonymousPathPre:
                   - /api/user-service/passenger
                   - /api/user-service/query
                   - /api/user-service/logout
@@ -22,7 +22,7 @@ spring:
           filters:
             - name: TokenValidate
               args:
-                blackPathPre:
+                anonymousPathPre:
                   - /api/ticket-service/ticket/purchase
                   - /api/ticket-service/ticket/pay/query
                   - /api/ticket-service/ticket/cancel
@@ -39,7 +39,7 @@ spring:
           filters:
             - name: TokenValidate
               args:
-                blackPathPre:
+                anonymousPathPre:
                   - /api/order-service/order/ticket/query
                   - /api/order-service/order/ticket/page
                   - /api/order-service/order/ticket/self/page

@@ -11,6 +11,7 @@
         <module>railway-service</module>
         <module>railway-dependencies</module>
         <module>railway-framework</module>
+        <module>railway-service/railway-pay-service</module>
     </modules>
 
     <properties>
